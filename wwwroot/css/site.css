@@ -1,0 +1,45 @@
+.header {
+    text-align: center;
+}
+
+.title {
+    margin-top: 25px;
+    padding-bottom: 30px;
+    display: inline-block;
+    border-bottom: solid black;
+}
+
+.link {
+    display: inline-block;
+    margin-left: 500px;
+    margin-top: 25px;
+    padding-bottom: 30px;
+}
+
+.dish {
+    display: inline-block;
+}
+
+.chef {
+    display: inline-block;
+}
+
+.Dishinfo {
+    display: block;
+}
+
+.big_form {
+    margin: 25px;
+    padding: 15px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 8px;
+    width: 483px;
+}
+#chef{
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    display: inline-block;
+    border-bottom: solid black;
+}

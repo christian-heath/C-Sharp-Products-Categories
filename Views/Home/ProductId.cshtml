@@ -1,0 +1,35 @@
+@{
+ViewData["Title"] = "Home Page";
+}
+@model prodandcat.Models.Associations
+<a href="/Products">All products</a>
+<h2 class='header'>@ViewBag.Product.Name</h2>
+<div class="left-side">
+    <h2>Categories</h2>
+    <ul>
+        @foreach(var x in @ViewBag.Categories)
+        {
+            @foreach(var y in x.Associations)
+            {
+                <li>@y.Categories.Name</li>
+            }
+        }
+    </ul>
+</div>
+<div class="right-side">
+    <h2>Add Category</h2>
+    <form class='big_form' asp-controller="Home" asp-action="ProductAssociation" method='POST'>
+        <div class="form-group">
+            <span asp-validation-for="CategoryId"></span>
+            <select asp-for="CategoryId" class="form-control">
+                @foreach(var category in @ViewBag.NonCategories)
+                {
+                    <option value="@category.CategoryId">@category.Name</option>
+                }
+            </select>
+        </div>
+        <span asp-validation-for="ProductId"></span>
+        <input type="hidden" value="@ViewBag.Product.ProductId" asp-for="ProductId">
+        <button type="submit" value='submit' class="btn btn-success">Add</button>
+    </form>
+</div>
